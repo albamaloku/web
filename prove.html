@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Example</title>
+    <link rel="stylesheet" href="prove2.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Author</a></li>
+                <li><a href="#">Books</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class=top-section>
+        <div class=container>
+            <h1>AlbLibrary</h1>
+            <p>Here you can find and buy books by the well-known Albanian author Viktor Canosinaj</p>
+        </div>
+    
+    </section>
+
+<section class=top-section2>
+<div class=gallery>
+        <div class=gallery-item>
+            <img src="p4.jpg" alt="P4">
+        </div>
+        <div class=gallery-item>
+            <img src="viktor.jpg" alt="Viktor Canosinaj">
+        </div>
+        <div class=gallery-item>
+            <img src="librat.jpg" alt="Librat">
+        </div>
+    </div>
+  </section>
+
+
+ <section class=bottom-section>
+        <div class=container>
+            <h2>Best Seller</h2>
+            <div class=services>
+                <div class=service>
+                   
+			<img src="meriyll.jpg" alt="Image1" width="200" height="300">
+                    <button class="button" style="vertical-align:middle"><span>Buy now</span></button>
+                </div>
+                <div class=service>
+            <img src="njecopetoke.jpg" alt="Image1" width="200" height="300">
+                    <button class="button" style="vertical-align:middle"><span>Buy now</span></button>
+                  
+                </div>
+                <div class=service>
+                   <img src="zemra.jpg" alt="Image1" width="200" height="300">
+                    <button class="button" style="vertical-align:middle"><span>Buy now</span></button>
+                  
+                </div>
+		 <div class=service>
+                    <img src="lulepashka.jpg" alt="Image1" width="200" height="300">
+                    <button class="button" style="vertical-align:middle"><span>Buy now</span></button>
+                </div>
+		<div class=service>
+                  <img src="lulemaji.jpg" alt="Image1" width="200" height="300">
+                    <button class="button" style="vertical-align:middle"><span>Buy now</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+ <section class=bottom-section2>
+ <div class="carousel-container">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item"><img src="valixhja.jpg" width="200" height="300" alt="Image 1"></div>
+                <div class="carousel-item"><img src="njecopetoke.jpg" width="200" height="300" alt="Image 2"></div>
+                <div class="carousel-item"><img src="kateryje.jpg" width="200" height="300" alt="Image 3"></div>
+                <div class="carousel-item"><img src="hija.jpg" width="200" height="300" alt="Image 4"></div>
+                <div class="carousel-item"><img src="biri.jpg" width="200" height="300" alt="Image 5"></div>
+            </div>
+        </div>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+let currentIndex = 0;
+
+function moveSlide(direction) {
+    const carouselInner = document.querySelector('.carousel-inner');
+    const totalItems = document.querySelectorAll('.carousel-item').length;
+
+    currentIndex += direction;
+
+    if (currentIndex >= totalItems) {
+        currentIndex = 0;
+    } else if (currentIndex < 0) {
+        currentIndex = totalItems - 1;
+    }
+
+    const offset = -currentIndex * 100;
+    carouselInner.style.transform = `translateX(${offset}%)`;
+}
+
+window.onload = () => {
+    document.querySelector('.carousel-inner').style.width = `${document.querySelectorAll('.carousel-item').length * 100}%`;
+};
+</script>
+
+
+</section>
+
+</body>
+</html>
+
